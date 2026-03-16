@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, signal, viewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
 import { Footer } from './core/layout/footer/footer';
 import { Contact } from './features/contact/contact';
 import { Education } from './features/education/education';

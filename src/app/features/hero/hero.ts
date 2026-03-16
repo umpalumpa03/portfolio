@@ -1,10 +1,14 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output, OutputEmitterRef } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
   templateUrl: './hero.html',
-  styleUrl: './hero.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Hero {}
+export class Hero {
+  public readonly viewProjects = output<void>();
+
+  public downloadCV(): void {
+    console.log('Download CV clicked');
+  }
+}

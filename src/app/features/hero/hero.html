@@ -1,1 +1,73 @@
-<p>hero works!</p>
+<section class="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="space-y-6">
+            <div class="space-y-2">
+                <p class="text-emerald-400 font-mono text-sm tracking-wider">
+                    Hi, I'm
+                </p>
+                <h1 class="text-5xl md:text-7xl font-bold text-white">
+                    Ucha Sephiskveradze
+                </h1>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-300">
+                Junior Angular Developer
+            </h2>
+
+            <p class="text-lg text-gray-400 leading-relaxed max-w-xl">
+                Building scalable, modular Angular applications with cutting-edge
+                technologies. Passionate about creating elegant solutions for
+                enterprise software and fintech platforms.
+            </p>
+
+            <div class="flex flex-wrap gap-4 pt-4">
+                <button (click)="viewProjects.emit()"
+                    class="inline-flex items-center justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-6 text-base transition-colors cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="mr-2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    View Projects
+                </button>
+
+                <button (click)="downloadCV()"
+                    class="inline-flex items-center justify-center rounded-md border-2 border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 font-semibold px-8 py-6 text-base transition-colors cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="mr-2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" x2="12" y1="15" y2="3"></line>
+                    </svg>
+                    Download CV
+                </button>
+            </div>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="relative">
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-full blur-lg opacity-50">
+                </div>
+                <div class="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gray-800">
+                    <img src="assets/ucha.jpg" alt="Ucha Sephiskveradze" class="w-full h-full object-cover" />
+                </div>
+                <div
+                    class="absolute -top-4 -right-4 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-lg px-4 py-2 font-mono text-emerald-400 text-sm">
+                    &lt;/&gt;
+                </div>
+                <div
+                    class="absolute -bottom-4 -left-4 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-lg px-4 py-2 font-mono text-blue-400 text-sm">
+                    &#123; &#125;
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
