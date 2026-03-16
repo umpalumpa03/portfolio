@@ -43,10 +43,16 @@
                                 class="w-full rounded-md bg-gray-900/50 border border-gray-600 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors resize-none"></textarea>
                         </div>
 
-                        <button type="submit" [disabled]="contactForm.invalid"
-                            class="w-full inline-flex items-center justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 text-base transition-colors">
+                        <button type="submit" [disabled]="contactForm.invalid || isSending()"
+                            class="w-full inline-flex items-center justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 text-base transition-colors cursor-pointer">
+
+                            @if (isSending()) {
+                            <lucide-icon name="loader-circle" class="mr-2 w-5 h-5 animate-spin"></lucide-icon>
+                            Sending...
+                            } @else {
                             <lucide-icon [img]="SendIcon" class="mr-2 w-5 h-5"></lucide-icon>
                             Send Message
+                            }
                         </button>
                     </form>
                 </div>

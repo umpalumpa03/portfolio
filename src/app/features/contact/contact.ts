@@ -4,6 +4,7 @@ import { LucideAngularModule, Send } from 'lucide-angular';
 import { SOCIAL_LINKS } from './config/contact.config';
 import { ContactMessage, SocialLink } from './models/contact.model';
 import { EmailService } from '../../core/services/email.service';
+import { ToastService } from '../../core/services/toast.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +15,7 @@ import { EmailService } from '../../core/services/email.service';
 export class Contact {
   private fb = inject(FormBuilder);
   private readonly emailService = inject(EmailService);
+  private readonly toastService = inject(ToastService);
 
   public readonly isSending = signal<boolean>(false);
   public readonly socialLinks: SocialLink[] = SOCIAL_LINKS;
@@ -32,20 +34,14 @@ export class Contact {
     }
 
     this.isSending.set(true);
-
-    const formData: ContactMessage = {
-      name: this.contactForm.value.name!,
-      email: this.contactForm.value.email!,
-      message: this.contactForm.value.message!,
-    };
+    const formData = this.contactForm.getRawValue() as ContactMessage;
 
     try {
       await this.emailService.sendEmail(formData);
-      alert('Success! Your message has been sent. I will be in touch soon.');
+      this.toastService.show('Message sent successfully! I will reach out soon.', 'success');
       this.contactForm.reset();
     } catch (error) {
-      console.error('Email transmission failed:', error);
-      alert('Oops! Something went wrong. Please try again or email me directly.');
+      this.toastService.show('Oops! Something went wrong. Please try again.', 'error');
     } finally {
       this.isSending.set(false);
     }

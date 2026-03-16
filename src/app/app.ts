@@ -5,10 +5,11 @@ import { Hero } from './features/hero/hero';
 import { Projects } from './features/projects/projects';
 import { Skills } from './features/skills/skills';
 import { Footer } from './features/footer/footer';
+import { Toast } from './shared/components/toast/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [Hero, Skills, Projects, Education, Contact, Footer],
+  imports: [Hero, Skills, Projects, Education, Contact, Footer, Toast],
   templateUrl: './app.html',
   styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
