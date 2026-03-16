@@ -5,7 +5,6 @@ import { PROJECTS_DATA } from './config/projects.config';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.html',
-  styleUrl: './projects.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Projects {

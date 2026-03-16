@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
-import { Footer } from './core/layout/footer/footer';
 import { Contact } from './features/contact/contact';
 import { Education } from './features/education/education';
 import { Hero } from './features/hero/hero';
 import { Projects } from './features/projects/projects';
 import { Skills } from './features/skills/skills';
+import { Footer } from './features/footer/footer';
 
 @Component({
   selector: 'app-root',

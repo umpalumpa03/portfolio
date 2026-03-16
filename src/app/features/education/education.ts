@@ -8,7 +8,6 @@ import { LucideAngularModule } from 'lucide-angular';
   selector: 'app-education',
   imports: [CommonModule, LucideAngularModule],
   templateUrl: './education.html',
-  styleUrl: './education.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Education {
