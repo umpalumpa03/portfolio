@@ -1,10 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Project } from './models/projects.model';
+import { PROJECTS_DATA } from './config/projects.config';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Projects {}
+export class Projects {
+  public readonly projects: Project[] = PROJECTS_DATA;
+}
