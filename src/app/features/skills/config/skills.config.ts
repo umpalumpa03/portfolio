@@ -26,14 +26,27 @@ const ICON_PATHS = {
     'M3 12c0 1.66 4 3 9 3s9-1.34 9-3',
     'M12 8c-4.97 0-9-1.34-9-3s4.03-3 9-3 9 1.34 9 3-4.03 3-9 3z',
   ],
+  wind: [
+    'M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2',
+    'M9.6 4.6A2 2 0 1 1 11 8H2',
+    'M12.6 19.4A2 2 0 1 0 14 16H2',
+  ],
+  gitBranch: [
+    'M6 3v12',
+    'M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z',
+    'M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z',
+    'M15 6a9 9 0 0 0-9 9',
+  ],
 } as const;
 
 export const SKILLS_DATA: Skill[] = [
   { name: 'HTML5', color: 'from-orange-500 to-red-500', iconPaths: ICON_PATHS.fileCode },
   { name: 'CSS3', color: 'from-blue-500 to-cyan-500', iconPaths: ICON_PATHS.palette },
   { name: 'Sass', color: 'from-pink-500 to-rose-500', iconPaths: ICON_PATHS.droplet },
+  { name: 'Tailwind CSS', color: 'from-teal-400 to-cyan-500', iconPaths: ICON_PATHS.wind },
   { name: 'TypeScript', color: 'from-blue-600 to-blue-400', iconPaths: ICON_PATHS.fileType },
   { name: 'Angular', color: 'from-red-600 to-pink-500', iconPaths: ICON_PATHS.triangle },
   { name: 'RxJS', color: 'from-purple-500 to-indigo-500', iconPaths: ICON_PATHS.workflow },
   { name: 'NgRx', color: 'from-violet-500 to-purple-600', iconPaths: ICON_PATHS.database },
+  { name: 'Git', color: 'from-orange-500 to-red-600', iconPaths: ICON_PATHS.gitBranch },
 ];
