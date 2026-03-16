@@ -1,1 +1,101 @@
-<p>contact works!</p>
+<section class="py-20 px-6 relative">
+    <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Get In Touch
+            </h2>
+            <p class="text-gray-400 text-lg">
+                Let's discuss your next project or opportunity
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+
+            <div>
+                <div
+                    class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8 hover:border-emerald-400/50 transition-all duration-300">
+
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2" for="name">
+                                Name
+                            </label>
+                            <input id="name" type="text" formControlName="name" placeholder="Your name"
+                                class="w-full rounded-md bg-gray-900/50 border border-gray-600 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors" />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2" for="email">
+                                Email
+                            </label>
+                            <input id="email" type="email" formControlName="email" placeholder="your.email@example.com"
+                                class="w-full rounded-md bg-gray-900/50 border border-gray-600 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors" />
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-300 mb-2" for="message">
+                                Message
+                            </label>
+                            <textarea id="message" formControlName="message" placeholder="Tell me about your project..."
+                                rows="5"
+                                class="w-full rounded-md bg-gray-900/50 border border-gray-600 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" [disabled]="contactForm.invalid"
+                            class="w-full inline-flex items-center justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 text-base transition-colors">
+                            <lucide-icon [img]="SendIcon" class="mr-2 w-5 h-5"></lucide-icon>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8">
+                    <h3 class="text-2xl font-bold text-white mb-6">
+                        Let's Connect
+                    </h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        I'm always open to discussing new projects, creative ideas, or
+                        opportunities to be part of your vision. Feel free to reach out
+                        through any of these channels.
+                    </p>
+
+                    <div class="space-y-4">
+                        @for (link of socialLinks; track link.name) {
+                        <a [href]="link.url" target="_blank" rel="noopener noreferrer"
+                            class="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-700 rounded-lg hover:border-emerald-400/50 transition-all duration-300 group cursor-pointer">
+                            <div
+                                class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <lucide-icon [img]="link.icon"
+                                    class="w-6 h-6 text-gray-400 transition-colors {{ link.color }}"></lucide-icon>
+                            </div>
+                            <div>
+                                <p class="text-white font-semibold">{{ link.name }}</p>
+                                <p class="text-gray-400 text-sm">
+                                    {{ link.handle }}
+                                </p>
+                            </div>
+                        </a>
+                        }
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-emerald-500/10 to-blue-500/10 backdrop-blur-sm border border-emerald-400/30 rounded-lg p-6">
+                    <p class="text-emerald-400 font-semibold mb-2">
+                        Available for Opportunities
+                    </p>
+                    <p class="text-gray-300 text-sm">
+                        Currently seeking full-time positions in Angular development,
+                        frontend engineering, or related roles in enterprise software
+                        and fintech.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

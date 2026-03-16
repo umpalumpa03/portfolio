@@ -20,7 +20,7 @@ export const PROJECTS_DATA: Project[] = [
     image:
       'https://images.unsplash.com/photo-1701686794404-3670ea43687e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBiYW5raW5nJTIwZmludGVjaCUyMGFwcHxlbnwxfHx8fDE3NzM2ODE4NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     tags: ['Angular 21', 'TailwindCSS', 'PrimeNG', 'Signals'],
-    liveUrl: 'https://tailwind-digitalbanking.netlify.app/travel-mode',
+    liveUrl: 'https://tailwind-digitalbanking.netlify.app',
     githubUrl: 'https://github.com/umpalumpa03/hackathon-tailwind',
   },
   {
