@@ -1,0 +1,22 @@
+@if (toastService.currentToast(); as toast) {
+<div class="fixed bottom-6 right-6 z-50 animate-fade-in-up">
+    <div class="flex items-center gap-3 px-4 py-3 rounded-lg shadow-xl backdrop-blur-md border min-w-[300px] transition-all duration-300"
+        [ngClass]="{
+            'bg-emerald-900/90 border-emerald-500/50 text-emerald-50': toast.type === 'success',
+            'bg-red-900/90 border-red-500/50 text-red-50': toast.type === 'error',
+          }">
+        @if (toast.type === 'success') {
+        <lucide-icon [img]="SuccessIcon" class="w-5 h-5 text-emerald-400"></lucide-icon>
+        } @else {
+        <lucide-icon [img]="ErrorIcon" class="w-5 h-5 text-red-400"></lucide-icon>
+        }
+
+        <p class="font-medium text-sm flex-1">{{ toast.message }}</p>
+
+        <button (click)="toastService.hide()"
+            class="p-1 rounded-md hover:bg-white/10 transition-colors opacity-70 hover:opacity-100">
+            <lucide-icon [img]="CloseIcon" class="w-4 h-4"></lucide-icon>
+        </button>
+    </div>
+</div>
+}

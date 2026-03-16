@@ -7,3 +7,10 @@ export interface SocialLink {
   color: string;
   handle: string;
 }
+
+export interface ContactMessage {
+  name: string;
+  email: string;
+  message: string;
+  time?: string;
+}
