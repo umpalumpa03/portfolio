@@ -22,10 +22,15 @@ export class Contact {
   public readonly SendIcon = Send;
 
   public readonly contactForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    message: ['', Validators.required],
+    name: ['', [Validators.required, Validators.maxLength(50)]],
+    email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
+    message: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(500)]],
   });
+
+  public isInvalid(field: 'name' | 'email' | 'message'): boolean {
+    const control = this.contactForm.controls[field];
+    return control.invalid && control.touched;
+  }
 
   public async onSubmit(): Promise<void> {
     if (this.contactForm.invalid || this.isSending()) {

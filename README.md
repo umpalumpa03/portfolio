@@ -1,59 +1,39 @@
-# NewPorfolio
+# Ucha Sephiskveradze | Developer Portfolio 🚀
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
+![Angular](https://img.shields.io/badge/Angular-v21-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Performance](https://img.shields.io/badge/Lighthouse-90%2B-00CC66?style=for-the-badge)
 
-## Development server
+A modern, high-performance developer portfolio built from the ground up to showcase my expertise in frontend engineering, scalable architecture, and enterprise-ready web applications.
 
-To start a local development server, run:
+🔗 **[View Live Demo Here](https://uchaportfolio.netlify.app)** _(<- Replace with your actual live link)_
 
-```bash
-ng serve
+## ✨ Key Features & Architecture
+
+This application was engineered with a strict focus on modern Angular best practices and web performance:
+
+- **Modern Angular (v21):** Fully utilizes Standalone Components, the new `@for`/`@if` control flow, and strictly typed Reactive Forms.
+- **Signal-Based State Management:** Uses Angular Signals natively for highly optimized, glitch-free UI state updates (e.g., Toast notifications, loading states).
+- **Lighthouse Optimized:** Achieves elite Lighthouse scores through strategic use of `NgOptimizedImage` (WebP formats, explicit priority loading) and strict payload budgeting.
+- **Functional Integrations:** Features a fully working Contact Form integrated with the EmailJS API, complete with custom Toast UI notifications and load-state handling.
+- **Responsive & Accessible:** Fully responsive design built with Tailwind CSS, ensuring WCAG AA contrast compliance and semantic HTML structure.
+
+## 🛠️ Tech Stack
+
+- **Framework:** Angular v21
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide Angular & Custom SVG Data Models
+- **API Integration:** EmailJS (Browser SDK)
+- **Deployment:** [Where you deploy it, e.g., Firebase Hosting / Vercel]
+
+## 📂 Project Structure Highlights
+
+The project follows a modular, feature-based architecture suitable for enterprise scaling:
+
+```text
+src/app/
+├── core/             # Singleton services (Email, Toast)
+├── features/         # Feature components (Hero, Skills, Projects, Contact)
+└── shared/           # Reusable UI components (Toast Notifications)
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

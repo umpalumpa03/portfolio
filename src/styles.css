@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+
+.asterbit-input {
+    @apply w-full rounded-md bg-gray-900/50 border border-gray-600 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors;
+}
+
+.asterbit-input.ng-invalid.ng-touched {
+    @apply border-red-400 focus:border-red-400 focus:ring-red-400;
+}
