@@ -1,7 +1,7 @@
-<section class="py-20 px-6 relative">
+<section class="py-20 px-4 sm:px-6 relative">
     <div class="max-w-6xl mx-auto">
 
-        <div class="text-center mb-16">
+        <div class="text-center mb-12 md:mb-16">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
                 Get In Touch
             </h2>
@@ -10,13 +10,13 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 items-start">
 
             <div>
                 <div
-                    class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8 hover:border-emerald-400/50 transition-all duration-300">
+                    class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-5 md:p-8 hover:border-emerald-400/50 transition-all duration-300">
 
-                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
+                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-5 md:space-y-6">
 
                         <div>
                             <label class="block text-sm font-semibold text-gray-300 mb-2" for="name">Name</label>
@@ -24,7 +24,8 @@
                                 class="asterbit-input" />
 
                             @if (getErrorMessage('name'); as errorMsg) {
-                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p> }
+                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p>
+                            }
                         </div>
 
                         <div>
@@ -33,7 +34,8 @@
                                 class="asterbit-input" />
 
                             @if (getErrorMessage('email'); as errorMsg) {
-                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p> }
+                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p>
+                            }
                         </div>
 
                         <div>
@@ -42,11 +44,12 @@
                                 rows="5" class="asterbit-input resize-none"></textarea>
 
                             @if (getErrorMessage('message'); as errorMsg) {
-                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p> }
+                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p>
+                            }
                         </div>
 
-                        <button type="submit" [disabled]="this.contactForm.invalid || isSending()" (click)="onSubmit()"
-                            class="w-full inline-flex items-center justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 text-base transition-colors cursor-pointer">
+                        <button type="submit" [disabled]="contactForm.invalid || isSending()"
+                            class="w-full inline-flex items-center justify-center rounded-xl bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold px-8 py-3.5 text-base transition-colors cursor-pointer">
                             @if (isSending()) {
                             <lucide-icon name="loader-circle" class="mr-2 w-5 h-5 animate-spin"></lucide-icon>
                             Sending...
@@ -59,31 +62,28 @@
                 </div>
             </div>
 
-            <div class="space-y-8">
-                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-8">
-                    <h3 class="text-2xl font-bold text-white mb-6">
+            <div class="space-y-6">
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-5 md:p-8">
+                    <h3 class="text-2xl font-bold text-white mb-4 md:mb-6">
                         Let's Connect
                     </h3>
-                    <p class="text-gray-400 mb-8 leading-relaxed">
-                        I'm always open to discussing new projects, creative ideas, or
-                        opportunities to be part of your vision. Feel free to reach out
-                        through any of these channels.
+                    <p class="text-gray-400 mb-6 md:mb-8 text-sm md:text-base leading-relaxed">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        vision. Feel free to reach out through any of these channels.
                     </p>
 
-                    <div class="space-y-4">
+                    <div class="space-y-3 md:space-y-4">
                         @for (link of socialLinks; track link.name) {
                         <a [href]="link.url" target="_blank" rel="noopener noreferrer"
-                            class="flex items-center gap-4 p-4 bg-gray-900/50 border border-gray-700 rounded-lg hover:border-emerald-400/50 transition-all duration-300 group cursor-pointer">
+                            class="flex items-center gap-4 p-3 md:p-4 bg-gray-900/50 border border-gray-700 rounded-xl hover:border-emerald-400/50 transition-all duration-300 group cursor-pointer">
                             <div
-                                class="w-12 h-12 rounded-full bg-linear-to-br from-emerald-500/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                class="w-10 h-10 md:w-12 md:h-12 shrink-0 rounded-full bg-linear-to-br from-emerald-500/20 to-blue-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                                 <lucide-icon [img]="link.icon"
-                                    class="w-6 h-6 text-gray-400 transition-colors {{ link.color }}"></lucide-icon>
+                                    class="w-5 h-5 md:w-6 md:h-6 text-gray-400 transition-colors {{ link.color }}"></lucide-icon>
                             </div>
-                            <div>
-                                <p class="text-white font-semibold">{{ link.name }}</p>
-                                <p class="text-gray-400 text-sm">
-                                    {{ link.handle }}
-                                </p>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-white font-semibold text-sm md:text-base truncate">{{ link.name }}</p>
+                                <p class="text-gray-400 text-xs md:text-sm truncate">{{ link.handle }}</p>
                             </div>
                         </a>
                         }
@@ -91,14 +91,13 @@
                 </div>
 
                 <div
-                    class="bg-linear-to-br from-emerald-500/10 to-blue-500/10 backdrop-blur-sm border border-emerald-400/30 rounded-lg p-6">
-                    <p class="text-emerald-400 font-semibold mb-2">
+                    class="bg-linear-to-br from-emerald-500/10 to-blue-500/10 backdrop-blur-sm border border-emerald-400/30 rounded-2xl p-5 md:p-6">
+                    <p class="text-emerald-400 font-semibold mb-2 text-sm md:text-base">
                         Available for Opportunities
                     </p>
-                    <p class="text-gray-300 text-sm">
-                        Currently seeking full-time positions in Angular development,
-                        frontend engineering, or related roles in enterprise software
-                        and fintech.
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed">
+                        Currently seeking full-time positions in Angular development, frontend engineering, or related
+                        roles in enterprise software and fintech.
                     </p>
                 </div>
 
