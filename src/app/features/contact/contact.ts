@@ -5,6 +5,7 @@ import { SOCIAL_LINKS } from './config/contact.config';
 import { ContactMessage, SocialLink } from './models/contact.model';
 import { EmailService } from '../../core/services/email.service';
 import { ToastService } from '../../core/services/toast.service';
+import { getValidationMessage } from '../../core/utils/validation.utils';
 
 @Component({
   selector: 'app-contact',
@@ -27,9 +28,12 @@ export class Contact {
     message: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(500)]],
   });
 
-  public isInvalid(field: 'name' | 'email' | 'message'): boolean {
+  public getErrorMessage(field: 'name' | 'email' | 'message'): string | null {
     const control = this.contactForm.controls[field];
-    return control.invalid && control.touched;
+
+    const displayName = field.charAt(0).toUpperCase() + field.slice(1);
+
+    return getValidationMessage(control, displayName);
   }
 
   public async onSubmit(): Promise<void> {

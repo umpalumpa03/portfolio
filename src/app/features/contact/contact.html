@@ -23,9 +23,8 @@
                             <input id="name" type="text" formControlName="name" placeholder="Your name"
                                 class="asterbit-input" />
 
-                            @if (isInvalid('name')) {
-                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">Name is required.</p>
-                            }
+                            @if (getErrorMessage('name'); as errorMsg) {
+                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p> }
                         </div>
 
                         <div>
@@ -33,13 +32,8 @@
                             <input id="email" type="email" formControlName="email" placeholder="your.email@example.com"
                                 class="asterbit-input" />
 
-                            @if (isInvalid('email')) {
-                            <div class="text-red-400 text-xs mt-1.5 animate-fade-in-up flex flex-col gap-1">
-                                @if (contactForm.controls.email.hasError('required')) { <p>Email is required.</p> }
-                                @if (contactForm.controls.email.hasError('email')) { <p>Please enter a valid email
-                                    address.</p> }
-                            </div>
-                            }
+                            @if (getErrorMessage('email'); as errorMsg) {
+                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p> }
                         </div>
 
                         <div>
@@ -47,12 +41,11 @@
                             <textarea id="message" formControlName="message" placeholder="Tell me about your project..."
                                 rows="5" class="asterbit-input resize-none"></textarea>
 
-                            @if (isInvalid('message')) {
-                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">Please enter a message.</p>
-                            }
+                            @if (getErrorMessage('message'); as errorMsg) {
+                            <p class="text-red-400 text-xs mt-1.5 animate-fade-in-up">{{ errorMsg }}</p> }
                         </div>
 
-                        <button type="submit" [disabled]="isSending()"
+                        <button type="submit" [disabled]="this.contactForm.invalid || isSending()" (click)="onSubmit()"
                             class="w-full inline-flex items-center justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold px-8 py-3 text-base transition-colors cursor-pointer">
                             @if (isSending()) {
                             <lucide-icon name="loader-circle" class="mr-2 w-5 h-5 animate-spin"></lucide-icon>
