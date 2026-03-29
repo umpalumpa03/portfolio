@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'FiraGO', 'sans-serif'],
+        sans: ['Inter', 'Eurostile GEO_Mt', 'FiraGO', 'sans-serif'],
       },
       keyframes: {
         fadeInUp: {
