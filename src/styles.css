@@ -6,17 +6,19 @@
   body {
     @apply font-sans;
   }
-  
-  /* Improve Georgian text readability */
+
+  /* Improve Georgian aesthetics and balance with Inter */
   :lang(ka) {
-    letter-spacing: 0.01em;
+    font-size: 0.94em;
+    letter-spacing: 0.005em;
+    line-height: 1.62;
   }
 }
 
 .asterbit-input {
-    @apply w-full rounded-md bg-gray-900/50 border border-gray-600 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors;
+  @apply w-full rounded-md bg-gray-900/50 border border-gray-600 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors;
 }
 
 .asterbit-input.ng-invalid.ng-touched {
-    @apply border-red-400 focus:border-red-400 focus:ring-red-400;
+  @apply border-red-400 focus:border-red-400 focus:ring-red-400;
 }
