@@ -4,32 +4,8 @@ import { LanguageService, Language } from '../../../core/services/language.servi
 
 @Component({
   selector: 'app-language-switcher',
-  standalone: true,
   imports: [CommonModule],
-  template: `
-    <div class="flex items-center gap-2 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full p-1 shadow-lg">
-      <button 
-        (click)="setLanguage('en')"
-        class="px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300"
-        [class.bg-emerald-500]="currentLang() === 'en'"
-        [class.text-white]="currentLang() === 'en'"
-        [class.text-gray-400]="currentLang() !== 'en'"
-        [class.hover:text-emerald-400]="currentLang() !== 'en'"
-      >
-        EN
-      </button>
-      <button 
-        (click)="setLanguage('ka')"
-        class="px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300"
-        [class.bg-emerald-500]="currentLang() === 'ka'"
-        [class.text-white]="currentLang() === 'ka'"
-        [class.text-gray-400]="currentLang() !== 'ka'"
-        [class.hover:text-emerald-400]="currentLang() !== 'ka'"
-      >
-        KA
-      </button>
-    </div>
-  `,
+  templateUrl: './language-switcher.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LanguageSwitcher {

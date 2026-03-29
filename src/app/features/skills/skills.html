@@ -37,7 +37,7 @@
             }
         </div>
 
-        <div class="mt-16 overflow-hidden" lang="en">
+        <div class="mt-16 overflow-hidden">
             <div class="flex gap-8 animate-marquee whitespace-nowrap w-max hover:[animation-play-state:paused]">
                 @for (skill of duplicatedSkills; track $index) {
                 <div
@@ -49,7 +49,7 @@
                         <path [attr.d]="path" />
                         }
                     </svg>
-                    <span class="text-gray-300 font-mono">{{ skill.name }}</span>
+                    <span class="text-gray-300 font-mono" lang="en">{{ skill.name }}</span>
                 </div>
                 }
             </div>
