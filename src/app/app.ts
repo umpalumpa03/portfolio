@@ -18,6 +18,7 @@ import { LanguageService } from './core/services/language.service';
 })
 export class App implements OnInit {
   private readonly languageService = inject(LanguageService);
+  protected readonly currentLang = this.languageService.language;
   protected projectsRef = viewChild<ElementRef>('projectsRef');
 
   ngOnInit() {
