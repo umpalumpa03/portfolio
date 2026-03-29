@@ -1,6 +1,7 @@
 {
   "HERO": {
     "GREETING": "Hi, I'm",
+    "NAME": "Ucha Sephiskveradze",
     "ROLE": "Junior Angular Developer",
     "DESCRIPTION": "Building scalable, modular Angular applications with cutting-edge technologies. Passionate about creating elegant solutions for enterprise software and fintech platforms.",
     "VIEW_PROJECTS": "View Projects",
