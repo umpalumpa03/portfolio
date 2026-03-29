@@ -2,6 +2,17 @@
 
 @import "tailwindcss";
 
+@layer base {
+  body {
+    @apply font-sans;
+  }
+  
+  /* Improve Georgian text readability */
+  :lang(ka) {
+    letter-spacing: 0.01em;
+  }
+}
+
 .asterbit-input {
     @apply w-full rounded-md bg-gray-900/50 border border-gray-600 px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors;
 }
