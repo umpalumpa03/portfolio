@@ -77,6 +77,11 @@
     letter-spacing: 0.01em;
     line-height: 1.62;
   }
+
+  /* Reset English segments to root size to prevent inherited Georgian scaling */
+  [lang="en"] {
+    font-size: 1rem;
+  }
 }
 
 .asterbit-input {
