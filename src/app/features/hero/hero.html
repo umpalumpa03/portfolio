@@ -1,44 +1,42 @@
-<section class="min-h-screen flex items-center justify-center px-6 py-20 relative overflow-hidden">
+<section class="min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 md:py-20 relative overflow-hidden">
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-        <div class="space-y-6">
+    <div class="max-w-6xl mx-auto flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div class="space-y-6 text-center md:text-left">
             <div class="space-y-2">
                 <p class="text-emerald-400 font-mono text-sm tracking-wider">
-                    Hi, I'm
+                    {{ 'HERO.GREETING' | translate }}
                 </p>
-                <h1 class="text-5xl md:text-7xl font-bold text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold text-white break-words">
                     Ucha Sephiskveradze
                 </h1>
             </div>
 
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-300">
-                Junior Angular Developer
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-300">
+                {{ 'HERO.ROLE' | translate }}
             </h2>
 
-            <p class="text-lg text-gray-400 leading-relaxed max-w-xl">
-                Building scalable, modular Angular applications with cutting-edge
-                technologies. Passionate about creating elegant solutions for
-                enterprise software and fintech platforms.
+            <p class="text-base sm:text-lg text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0">
+                {{ 'HERO.DESCRIPTION' | translate }}
             </p>
 
-            <div class="flex flex-wrap gap-4 pt-4">
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
                 <button (click)="viewProjects.emit()"
-                    class="inline-flex items-center justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-6 text-base transition-colors cursor-pointer">
+                    class="inline-flex items-center justify-center rounded-md bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-4 sm:px-8 sm:py-6 text-sm sm:text-base transition-colors cursor-pointer w-full sm:w-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="mr-2">
                         <polyline points="16 18 22 12 16 6"></polyline>
                         <polyline points="8 6 2 12 8 18"></polyline>
                     </svg>
-                    View Projects
+                    {{ 'HERO.VIEW_PROJECTS' | translate }}
                 </button>
 
                 <button (click)="downloadCV()"
-                    class="inline-flex items-center justify-center rounded-md border-2 border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 font-semibold px-8 py-6 text-base transition-colors cursor-pointer">
+                    class="inline-flex items-center justify-center rounded-md border-2 border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 font-semibold px-6 py-4 sm:px-8 sm:py-6 text-sm sm:text-base transition-colors cursor-pointer w-full sm:w-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="mr-2">
@@ -46,37 +44,39 @@
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" x2="12" y1="15" y2="3"></line>
                     </svg>
-                    Download CV
+                    {{ 'HERO.DOWNLOAD_CV' | translate }}
                 </button>
 
-                <a href="https://www.linkedin.com/in/ucha-sephiskveradze/" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center rounded-md border-2 border-gray-700 text-gray-400 hover:text-blue-400 hover:border-blue-400 hover:bg-blue-400/10 px-6 py-6 transition-all duration-300 cursor-pointer"
-                    aria-label="LinkedIn Profile">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
+                <div class="flex gap-4 w-full sm:w-auto justify-center">
+                    <a href="https://www.linkedin.com/in/ucha-sephiskveradze/" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center rounded-md border-2 border-gray-700 text-gray-400 hover:text-blue-400 hover:border-blue-400 hover:bg-blue-400/10 px-6 py-4 sm:py-6 transition-all duration-300 cursor-pointer"
+                        aria-label="LinkedIn Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div class="flex justify-center">
-            <div class="relative">
+        <div class="flex justify-center w-full">
+            <div class="relative group">
                 <div
-                    class="absolute -inset-1 bg-linear-to-r from-emerald-500 to-blue-500 rounded-full blur-lg opacity-50">
+                    class="absolute -inset-1 bg-linear-to-r from-emerald-500 to-blue-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500">
                 </div>
-                <div class="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gray-800">
+                <div class="relative w-[260px] h-[260px] sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gray-800">
                     <img ngSrc="assets/ucha.webp" alt="Ucha Sephiskveradze" width="384" height="384" priority
                         class="w-full h-full object-cover" />
                 </div>
                 <div
-                    class="absolute -top-4 -right-4 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-lg px-4 py-2 font-mono text-emerald-400 text-sm">
+                    class="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-lg px-3 py-1 sm:px-4 sm:py-2 font-mono text-emerald-400 text-xs sm:text-sm">
                     &lt;/&gt;
                 </div>
                 <div
-                    class="absolute -bottom-4 -left-4 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-lg px-4 py-2 font-mono text-blue-400 text-sm">
+                    class="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-lg px-3 py-1 sm:px-4 sm:py-2 font-mono text-blue-400 text-xs sm:text-sm">
                     &#123; &#125;
                 </div>
             </div>

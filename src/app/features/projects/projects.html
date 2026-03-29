@@ -1,15 +1,15 @@
-<section class="py-20 px-6 relative">
+<section class="py-12 md:py-20 px-4 sm:px-6 relative">
     <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                Featured Projects
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+                {{ 'PROJECTS.TITLE' | translate }}
             </h2>
-            <p class="text-gray-400 text-lg">
-                Recent work showcasing my Angular development expertise
+            <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+                {{ 'PROJECTS.SUBTITLE' | translate }}
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             @for (project of projects; track project.id) {
             <div class="group relative">
                 <div
@@ -28,11 +28,11 @@
 
                     <div class="p-6 space-y-4">
                         <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
-                            {{ project.title }}
+                            {{ getProjectTitle(project) }}
                         </h3>
 
                         <p class="text-gray-400 text-sm leading-relaxed line-clamp-3">
-                            {{ project.description }}
+                            {{ getProjectDescription(project) }}
                         </p>
 
                         <div class="flex flex-wrap gap-2">
@@ -49,7 +49,7 @@
                                 class="inline-flex items-center justify-center flex-1 bg-emerald-500 hover:bg-emerald-600 text-white rounded-md px-3 py-2 text-sm font-medium transition-colors cursor-pointer">
                                 <img class="mr-2 brightness-0 invert" src="svgs/projects/live-demo.svg"
                                     alt="Live Demo Button" />
-                                Live Demo
+                                {{ 'PROJECTS.LIVE_DEMO' | translate }}
                             </a>
 
                             <a [href]="project.githubUrl" target="_blank"
