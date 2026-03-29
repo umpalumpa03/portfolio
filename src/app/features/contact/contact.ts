@@ -6,10 +6,11 @@ import { ContactMessage, SocialLink } from './models/contact.model';
 import { EmailService } from '../../core/services/email.service';
 import { ToastService } from '../../core/services/toast.service';
 import { getValidationMessage } from '../../core/utils/validation.utils';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
-  imports: [ReactiveFormsModule, LucideAngularModule],
+  imports: [ReactiveFormsModule, LucideAngularModule, TranslateModule],
   templateUrl: './contact.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -17,6 +18,7 @@ export class Contact {
   private fb = inject(FormBuilder);
   private readonly emailService = inject(EmailService);
   private readonly toastService = inject(ToastService);
+  private readonly translate = inject(TranslateService);
 
   public readonly isSending = signal<boolean>(false);
   public readonly socialLinks: SocialLink[] = SOCIAL_LINKS;
@@ -30,10 +32,10 @@ export class Contact {
 
   public getErrorMessage(field: 'name' | 'email' | 'message'): string | null {
     const control = this.contactForm.controls[field];
+    const displayNameKey = `CONTACT.LABELS.${field.toUpperCase()}`;
+    const displayName = this.translate.instant(displayNameKey);
 
-    const displayName = field.charAt(0).toUpperCase() + field.slice(1);
-
-    return getValidationMessage(control, displayName);
+    return getValidationMessage(control, displayName, this.translate);
   }
 
   public async onSubmit(): Promise<void> {
@@ -47,10 +49,10 @@ export class Contact {
 
     try {
       await this.emailService.sendEmail(formData);
-      this.toastService.show('Message sent successfully! I will reach out soon.', 'success');
+      this.toastService.show(this.translate.instant('CONTACT.TOASTS.SUCCESS'), 'success');
       this.contactForm.reset();
     } catch (error) {
-      this.toastService.show('Oops! Something went wrong. Please try again.', 'error');
+      this.toastService.show(this.translate.instant('CONTACT.TOASTS.ERROR'), 'error');
     } finally {
       this.isSending.set(false);
     }

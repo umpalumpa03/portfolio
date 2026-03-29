@@ -1,10 +1,11 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, output, OutputEmitterRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.html',
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, TranslateModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Hero {

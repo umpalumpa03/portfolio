@@ -4,15 +4,15 @@
 
             <div class="flex items-center gap-2 text-gray-400 text-sm">
                 <lucide-icon [img]="CodeIcon" class="w-4 h-4 text-emerald-400"></lucide-icon>
-                <span>Built with Angular expertise</span>
+                <span>{{ 'FOOTER.BUILT_WITH' | translate }}</span>
             </div>
 
             <div class="flex items-center gap-2 text-gray-400 text-sm">
-                <span>© {{ currentYear }} Ucha Sephiskveradze.</span>
+                <span>{{ 'FOOTER.RIGHTS' | translate: { year: currentYear } }}</span>
             </div>
 
             <div class="text-gray-400 text-sm">
-                <span class="font-mono text-emerald-400">v1.0.0</span>
+                <span class="font-mono text-emerald-400">v1.1.0</span>
             </div>
 
         </div>
