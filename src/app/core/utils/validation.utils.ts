@@ -1,30 +1,32 @@
 import { AbstractControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 export const getValidationMessage = (
   control: AbstractControl | null,
   fieldName: string,
+  translate: TranslateService
 ): string | null => {
   if (!control || control.valid || !control.touched) {
     return null;
   }
 
   if (control.hasError('required')) {
-    return `${fieldName} is required.`;
+    return translate.instant('VALIDATION.REQUIRED', { field: fieldName });
   }
 
   if (control.hasError('email')) {
-    return 'Please enter a valid email address.';
+    return translate.instant('VALIDATION.EMAIL');
   }
 
   if (control.hasError('minlength')) {
     const required = control.getError('minlength').requiredLength;
-    return `Must be at least ${required} characters.`;
+    return translate.instant('VALIDATION.MINLENGTH', { required });
   }
 
   if (control.hasError('maxlength')) {
     const required = control.getError('maxlength').requiredLength;
-    return `Cannot exceed ${required} characters.`;
+    return translate.instant('VALIDATION.MAXLENGTH', { required });
   }
 
-  return 'Invalid input.';
+  return translate.instant('VALIDATION.INVALID');
 };

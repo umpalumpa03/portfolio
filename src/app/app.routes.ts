@@ -3,13 +3,17 @@ import { App } from './app';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: ':lang',
     component: App,
     title: 'Ucha Sephiskveradze | Angular Developer',
   },
   {
-    path: '**',
-    redirectTo: '',
+    path: '',
+    redirectTo: 'en',
     pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: 'en',
   },
 ];
