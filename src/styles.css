@@ -3,59 +3,66 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Eurostile GEO_Mt';
-  src: url('/assets/fonts/Eurostile GEO_Mt-77580666696.ttf') format('truetype');
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad Regular-26958361069.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Eurostile GEO_Mt';
-  src: url('/assets/fonts/Eurostile GEO_Mt Italic-77580666696.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad Thin-26958361069.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Eurostile GEO_Mt';
-  src: url('/assets/fonts/Eurostile GEO_Mt Demi-77580666696.ttf') format('truetype');
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad ExtraLight-26958361069.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad Light-26958361069.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad Medium-26958361069.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad SemiBold-26958361069.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Eurostile GEO_Mt';
-  src: url('/assets/fonts/Eurostile GEO_Mt Demi Italic-77580666696.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Eurostile GEO_Mt';
-  src: url('/assets/fonts/Eurostile GEO_Mt Bold-77580666696.ttf') format('truetype');
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad Bold-26958361069.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Eurostile GEO_Mt';
-  src: url('/assets/fonts/Eurostile GEO_Mt Bold Italic-77580666696.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Eurostile GEO_Mt';
-  src: url('/assets/fonts/Eurostile GEO_Mt Black-77580666696.ttf') format('truetype');
-  font-weight: 900;
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad ExtraBold-26958361069.otf') format('opentype');
+  font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Eurostile GEO_Mt';
-  src: url('/assets/fonts/Eurostile GEO_Mt Black Italic-77580666696.ttf') format('truetype');
+  font-family: 'Mersad';
+  src: url('/assets/fonts/Mersad Black-26958361069.otf') format('opentype');
   font-weight: 900;
-  font-style: italic;
+  font-style: normal;
 }
 
 @layer base {
@@ -65,7 +72,7 @@
 
   /* Improve Georgian aesthetics and balance with Inter */
   :lang(ka) {
-    font-family: 'Eurostile GEO_Mt', 'FiraGO', sans-serif !important;
+    font-family: 'Mersad', 'FiraGO', sans-serif !important;
     font-size: 0.92em;
     letter-spacing: 0.01em;
     line-height: 1.62;
